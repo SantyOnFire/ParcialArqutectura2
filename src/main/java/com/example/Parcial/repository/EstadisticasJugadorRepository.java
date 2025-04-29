@@ -26,4 +26,6 @@ public interface EstadisticasJugadorRepository extends JpaRepository<Estadistica
     // 4. Top asistentes
     @Query(value = "SELECT id_jugador, SUM(asistencias) as total_asistencias FROM estadisticas_jugador GROUP BY id_jugador ORDER BY total_asistencias DESC LIMIT :limit", nativeQuery = true)
     List<Object[]> findTopAsistentes(@Param("limit") int limit);
+
+    Integer findTotalGolesByEquipo(Long idEquipo);
 }

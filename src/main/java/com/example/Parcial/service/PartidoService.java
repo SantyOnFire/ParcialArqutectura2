@@ -43,7 +43,6 @@ public class PartidoService {
 
     // Método para resolver el error en PartidoController
     public List<Map<String, Object>> findAllResultados() {
-        // Utilizamos el método existente que ya realiza una consulta similar
         return findAllPartidosConEquipos();
     }
 }

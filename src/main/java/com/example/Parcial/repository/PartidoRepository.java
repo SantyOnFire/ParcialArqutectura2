@@ -29,4 +29,6 @@ public interface PartidoRepository extends JpaRepository<Partido, Long> {
     // 4. Partidos con más de X goles totales
     @Query(value = "SELECT * FROM partido WHERE (goles_local + goles_visita) > :totalGoles", nativeQuery = true)
     List<Partido> findByTotalGolesGreaterThan(@Param("totalGoles") int totalGoles);
+
+    List<Map<String, Object>> findAllPartidosConEquipos();
 }

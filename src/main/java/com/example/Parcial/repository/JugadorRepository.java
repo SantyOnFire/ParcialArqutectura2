@@ -27,4 +27,8 @@ public interface JugadorRepository extends JpaRepository<Jugador, Long> {
     // 4. Jugadores por nacionalidad
     @Query(value = "SELECT * FROM jugador WHERE nacionalidad = :nacionalidad", nativeQuery = true)
     List<Jugador> findByNacionalidad(@Param("nacionalidad") String nacionalidad);
+
+    List<Jugador> findJugadoresConMasGoles(Integer cantidadGoles);
+
+    List<Jugador> findJugadoresByEquipo(Long idEquipo);
 }
